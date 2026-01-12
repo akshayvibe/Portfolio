@@ -7,10 +7,10 @@
     "handle": "zero",
     "avatar": "https://i.postimg.cc/Y0CBrVM2/banner_(2).jpg",
     "banner": "https://i.postimg.cc/hjrqqgFk/banner_(1).jpg", 
-    "bio": "Revolutionary strategist and tactical genius. Wielder of the Power of Absolute Obedience. Fighting for a world where the weak are not oppressed.",
-    "location": "Area 11 (Japan)",
+    "bio": "CS Student at VIT | Tech Lead @ Google Developer Group | Building with MERN Stack & Golang | Passionate About Scalable Backend Solutions",
+    "location": "📍India",
     "resumeUrl": "#",
-    "email": "zero@blackknights.org"
+    "email": "akshayjha2111@gmail.com"
   },
   "roles": [
     "Master Strategist",
@@ -27,12 +27,12 @@
     },
     {
       "name": "Twitter",
-      "url": "https://twitter.com/zero",
+      "url": "https://x.com/akshajha2111",
       "icon": "twitter"
     },
     {
       "name": "LinkedIn",
-      "url": "https://linkedin.com/in/zero",
+      "url": "https://www.linkedin.com/in/akshay-kumar-mishra-320413246/",
       "icon": "linkedin"
     }
   ],
@@ -87,8 +87,8 @@
       "location": "Bhopal,Madhya Pradesh",
       "grade": "3rd Year",
       "details": [
-        "Top academic performer across all subjects",
-        "Vice President of the Student Council",
+        "Tech Lead Of GDGC",
+        "Core Member of VITERA Club",
         "Champion of the school chess club"
       ]
     }
