@@ -1,12 +1,12 @@
 {
-  "theme": "monochrome",
-  "github": "torvalds",
+  "theme": "Ocean",
+  "github": "akshayjha21",
   "illustration": true,
   "profile": {
-    "name": "Lelouch vi Britannia",
+    "name": "Akshay Kumar Mishra",
     "handle": "zero",
-    "avatar": "https://imgs.search.brave.com/llxNE6-IlXfe7sZMwozzEt1J3aKGPAZLcfWDMr3L8Vc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNDE5/NTQwNC5qcGc",
-    "banner": "https://wallpapercave.com/wp/wp2883490.jpg",
+    "avatar": "https://i.postimg.cc/Y0CBrVM2/banner_(2).jpg",
+    "banner": "https://i.postimg.cc/hjrqqgFk/banner_(1).jpg", 
     "bio": "Revolutionary strategist and tactical genius. Wielder of the Power of Absolute Obedience. Fighting for a world where the weak are not oppressed.",
     "location": "Area 11 (Japan)",
     "resumeUrl": "#",
@@ -22,7 +22,7 @@
   "socials": [
     {
       "name": "GitHub",
-      "url": "https://github.com/zero",
+      "url": "https://github.com/akshayjha21",
       "icon": "github"
     },
     {
@@ -78,47 +78,7 @@
       "color": "#DC2626"
     }
   ],
-  "experience": [
-    {
-      "company": "Black Knights",
-      "role": "Supreme Commander (Zero)",
-      "type": "Leadership",
-      "period": "2017 - 2018 a.t.b.",
-      "location": "Japan / Global",
-      "details": [
-        "Founded and led the Black Knights resistance organization against Britannian Empire",
-        "Orchestrated the liberation of Japan through strategic military operations",
-        "Unified resistance groups across the globe under a single command structure",
-        "Achieved chairman position of the United Federation of Nations"
-      ]
-    },
-    {
-      "company": "Holy Britannian Empire",
-      "role": "99th Emperor",
-      "type": "Monarchy",
-      "period": "2018 a.t.b.",
-      "location": "Pendragon",
-      "details": [
-        "Seized the throne through strategic manipulation and Geass",
-        "Implemented sweeping reforms to dismantle the aristocracy",
-        "Executed the Zero Requiem plan to bring world peace",
-        "United the world against a common enemy to end conflict"
-      ]
-    },
-    {
-      "company": "Ashford Academy",
-      "role": "Student Council Vice President",
-      "type": "Education",
-      "period": "2016 - 2018 a.t.b.",
-      "location": "Tokyo Settlement",
-      "details": [
-        "Maintained perfect academic standing while leading a double life",
-        "Organized school festivals and cultural events",
-        "Protected the identity of exiled royalty while attending classes"
-      ]
-    }
-  ],
-  "education": [
+   "education": [
     {
       "institution": "Ashford Academy",
       "degree": "High School Diploma",

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ThemeProvider, useTheme } from "../../context/ThemeContext";
 import { ANIMATION } from "../../lib/constants";
-import { Hero, Experience, Education, Projects, SkillSlider, Blog, Footer, GitHubChart, SpotifyWidget, IllustrationOverlay } from "./index";
+import { Hero,  Education, Projects, SkillSlider, Blog, Footer, GitHubChart, SpotifyWidget, IllustrationOverlay } from "./index";
 import type { PortfolioData } from "../../types/portfolio";
 
 interface PortfolioProps {
@@ -37,10 +37,10 @@ function PortfolioContent({ data }: PortfolioProps) {
 
         <GitHubChart username={data.github} />
         <SpotifyWidget />
-        <Experience experiences={data.experience} />
+        {/* <Experience experiences={data.experience} /> */}
         <Education education={data.education} />
         <Projects projects={data.projects} />
-        <Blog blogs={data.blogs} />
+        {/* <Blog blogs={data.blogs} /> */}
         <Footer quotes={data.quotes} handle={data.profile.handle} />
       </motion.div>
 

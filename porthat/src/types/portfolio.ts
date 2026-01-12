@@ -21,14 +21,14 @@ export interface Skill {
   color: string;
 }
 
-export interface Experience {
-  company: string;
-  role: string;
-  type: string;
-  period: string;
-  location: string;
-  details: string[];
-}
+// export interface Experience {
+//   company: string;
+//   role: string;
+//   type: string;
+//   period: string;
+//   location: string;
+//   details: string[];
+// }
 
 export interface Project {
   id: string;
@@ -70,7 +70,7 @@ export interface PortfolioData {
   roles: string[];
   socials: Social[];
   skills: Skill[];
-  experience: Experience[];
+  // experience: Experience[];
   education: Education[];
   projects: Project[];
   blogs: BlogPost[];
