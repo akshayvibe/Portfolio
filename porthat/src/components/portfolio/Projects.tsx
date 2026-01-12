@@ -82,16 +82,16 @@ export default function Projects({ projects }: ProjectsProps) {
                     className="w-[90%] sm:w-[85%] h-[85%] sm:h-[80%] object-cover rounded-lg shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
-                <div className="absolute top-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                <div className="absolute top-2 right-1 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="p-1.5 rounded-md backdrop-blur-md transition-colors bg-black/50 hover:bg-black/70 text-white cursor-pointer"
+                      className="p-1.5 rounded-md backdrop-blur-md transition-colors bg-white/60 hover:bg-white/80 text-black cursor-pointer"
                     >
-                      <Github className="w-3.5 h-3.5" />
+                      <Github className="w-4.5 h-4.5" />
                     </a>
                   )}
                   {project.demo && (
