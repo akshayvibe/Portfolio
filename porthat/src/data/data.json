@@ -111,22 +111,22 @@
     },
     {
       "id": "2",
-      "title": "Talksy",
-      "slug": "Talksy",
-      "description": "Created a revolutionary military organization from scattered resistance groups, becoming the world's most powerful independent army.",
+      "title": "SafeSphere.AI",
+      "slug": "SafeSphere.AI",
+      "description": "Our project designed to empower women online by providing real-time privacy protection, harassment detection, and stalking defense across popular platforms like Gmail, Twitter, Instagram, and Facebook.",
       "image": "https://wallpapercave.com/wp/wp2883518.jpg",
       "tags": [
-        "Leadership",
-        "Military",
+        "CyberSecurity",
+        "Women Safety",
         "Revolution"
       ],
-      "github": null,
+      "github":"https://github.com/akshayvibe/SafeSphere.ai",
       "demo": null,
       "featured": true
     },
     {
       "id": "3",
-      "title": "SafeSphere.AI",
+      "title": "Distributed Worker Queue",
       "slug": "SafeSphere.AI",
       "description": "Diplomatic achievement uniting 47 nations against the Britannian Empire, establishing a democratic world order.",
       "image": "https://wallpapercave.com/wp/yO2TljR.jpg",
