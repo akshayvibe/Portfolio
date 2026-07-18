@@ -1,13 +1,13 @@
 {
   "theme": "Ocean",
-  "github": "akshayjha21",
+  "github": "akshayvibe",
   "illustration": true,
   "profile": {
     "name": "Akshay Kumar Mishra",
     "handle": "zero",
     "avatar": "https://i.postimg.cc/Y0CBrVM2/banner_(2).jpg",
     "banner": "https://i.postimg.cc/hjrqqgFk/banner_(1).jpg", 
-    "bio": "CS Student at VIT | Tech Lead @ Google Developer Group | Building with MERN Stack & Golang | Passionate About Scalable Backend Solutions",
+    "bio": "CS Student at VIT | Tech Lead @ Google Developer Group | AI Engineer | Building Scalable Systems with Golang",
     "location": "📍India",
     "resumeUrl": "#",
     "email": "akshayjha2111@gmail.com"
@@ -17,12 +17,12 @@
     "Revolutionary Leader",
     "Knightmare Pilot",
     "Chess Grandmaster",
-    "Geass User"
+    "AI Engineer"
   ],
   "socials": [
     {
       "name": "GitHub",
-      "url": "https://github.com/akshayjha21",
+      "url": "https://github.com/akshayvibe",
       "icon": "github"
     },
     {
@@ -85,7 +85,7 @@
       "field": "Computer Science And Engineering ",
       "period": "2023 - 2027",
       "location": "Bhopal,Madhya Pradesh",
-      "grade": "3rd Year",
+      "grade": "4th Year",
       "details": [
         "Tech Lead Of GDGC",
         "Core Member of VITERA Club",
@@ -105,7 +105,7 @@
         "Redis",
         "Go"
       ],
-      "github": "https://github.com/akshayjha21/RescueMesh",
+      "github": "https://github.com/akshayvibe/RescueMesh",
       "demo": null,
       "featured": true
     },
