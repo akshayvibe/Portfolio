@@ -25,46 +25,45 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
   }, [roles.length]);
 
   return (
-    <>
-      <motion.div variants={ANIMATION.fadeIn} className="relative mb-6">
-        <div className="relative overflow-hidden rounded-2xl h-32 sm:h-40">
-          <img src={profile.banner} alt="Banner" className="w-full h-full object-cover" />
-          <button
-            onClick={(e) => setMode(mode === "dark" ? "light" : "dark", e)}
-            className="absolute top-3 right-3 p-2 rounded-lg transition-colors backdrop-blur-sm hover:bg-white/30 cursor-pointer"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.2)",
-              color: "#fff",
-            }}
-          >
-            {mode === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
-        </div>
-        <div className="absolute -bottom-12 left-6 sm:left-8 z-20">
+    <motion.div variants={ANIMATION.fadeIn} className="bento-card bento-hero overflow-hidden flex flex-col">
+      {/* Banner */}
+      <div className="relative h-28 sm:h-32 lg:h-36 flex-shrink-0">
+        <img src={profile.banner} alt="Banner" className="w-full h-full object-cover" />
+        <button
+          onClick={(e) => setMode(mode === "dark" ? "light" : "dark", e)}
+          className="absolute top-3 right-3 p-2 rounded-lg transition-colors backdrop-blur-sm hover:bg-white/30 cursor-pointer"
+          style={{
+            backgroundColor: "rgba(255,255,255,0.2)",
+            color: "#fff",
+          }}
+        >
+          {mode === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+        </button>
+        {/* Avatar overlapping banner */}
+        <div className="absolute -bottom-10 left-5 z-20">
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-4 shadow-xl"
+            className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl overflow-hidden border-4 shadow-xl"
             style={{ borderColor: colors.background, backgroundColor: colors.background }}
           >
             <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover" />
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.section
-        variants={ANIMATION.fadeIn}
-        className="rounded-2xl border p-6 sm:p-8 mb-6 pt-16 sm:pt-14 backdrop-blur-xl"
+      {/* Content */}
+      <div
+        className="flex-1 p-5 pt-14 sm:pt-12"
         style={{
           backgroundColor: mode === "dark" ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.6)",
-          borderColor: mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)",
         }}
       >
-        <div className="mb-4">
+        <div className="mb-3">
           <div className="flex items-center gap-2 flex-wrap">
-            <h1 className="text-xl sm:text-2xl font-semibold" style={{ color: colors.foreground }}>
+            <h1 className="text-lg sm:text-xl font-semibold" style={{ color: colors.foreground }}>
               {profile.name}
             </h1>
-            <span className="text-sm" style={{ color: `${colors.foreground}80` }}>
+            <span className="text-xs" style={{ color: `${colors.foreground}80` }}>
               @{profile.handle}
             </span>
             <motion.a
@@ -106,27 +105,27 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
           </div>
         </div>
 
-        <p className="text-sm sm:text-base leading-relaxed mb-5 sm:mb-6" style={{ color: `${colors.foreground}b3` }}>
+        <p className="text-xs sm:text-sm leading-relaxed mb-4" style={{ color: `${colors.foreground}b3` }}>
           {profile.bio}
         </p>
 
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-5 sm:mb-6">
+        <div className="flex flex-wrap gap-2 mb-4">
           <motion.a
             href={`mailto:${profile.email}`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             style={{ background: getGradient(colors), boxShadow: `0 10px 15px -3px ${colors.primary}40` }}
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium text-white relative overflow-hidden group transition-all duration-300 hover:shadow-lg cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-medium text-white relative overflow-hidden group transition-all duration-300 hover:shadow-lg cursor-pointer"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 relative z-10" />
+            <Calendar className="w-3.5 h-3.5 relative z-10" />
             <span className="relative z-10">Let's talk</span>
           </motion.a>
           <motion.a
             href={`mailto:${profile.email}`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium border-2 transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-medium border-2 transition-all duration-300 cursor-pointer"
             style={{
               borderColor: mode === "dark" ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.1)",
               color: colors.foreground,
@@ -140,16 +139,16 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
               e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.1)";
             }}
           >
-            <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <Mail className="w-3.5 h-3.5" />
             Drop a mail
           </motion.a>
         </div>
 
         <div>
-          <p className="text-xs sm:text-sm mb-2 sm:mb-3" style={{ color: `${colors.foreground}99` }}>
+          <p className="text-xs mb-2" style={{ color: `${colors.foreground}99` }}>
             Find me on the <span style={{ color: colors.foreground }} className="font-medium">internet</span>
           </p>
-          <div className="flex flex-wrap gap-1.5 sm:gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {socials.map((social) => (
               <motion.a
                 key={social.name}
@@ -158,7 +157,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-xs sm:text-sm transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs transition-all duration-200 cursor-pointer"
                 style={{
                   backgroundColor: mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
                   color: `${colors.foreground}b3`,
@@ -172,13 +171,13 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
                   e.currentTarget.style.color = `${colors.foreground}b3`;
                 }}
               >
-                <Icon name={social.icon} className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <Icon name={social.icon} className="w-3.5 h-3.5" />
                 {social.name}
               </motion.a>
             ))}
           </div>
         </div>
-      </motion.section>
-    </>
+      </div>
+    </motion.div>
   );
 }

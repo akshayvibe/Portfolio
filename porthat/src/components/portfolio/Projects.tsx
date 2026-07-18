@@ -20,12 +20,12 @@ export default function Projects({ projects }: ProjectsProps) {
   const { colors, mode } = useTheme();
 
   return (
-    <motion.section
+    <motion.div
       variants={ANIMATION.fadeIn}
-      className="mb-5 sm:mb-6 relative overflow-hidden rounded-2xl p-4 sm:p-6 backdrop-blur-xl border"
+      className="bento-card bento-projects p-5 relative overflow-hidden"
       style={{
         background: getSectionGradient(colors, mode),
-        borderColor: mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
+        borderColor: mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)",
       }}
     >
       <div
@@ -33,18 +33,18 @@ export default function Projects({ projects }: ProjectsProps) {
         style={{ background: getGlowColor(colors, mode) }}
       />
       <div className="relative z-10">
-        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+        <div className="flex items-center gap-2 mb-4">
           <div
-            className="h-6 sm:h-8 w-1 rounded-full"
+            className="h-6 w-1 rounded-full"
             style={{ background: `linear-gradient(to bottom, ${colors.highlight}, ${colors.primary})` }}
           />
-          <h2 className="text-base sm:text-lg font-semibold" style={{ color: colors.foreground }}>
+          <h2 className="text-sm font-semibold" style={{ color: colors.foreground }}>
             Things I've built
           </h2>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
           variants={ANIMATION.cardStagger}
           initial="hidden"
           whileInView="visible"
@@ -60,26 +60,26 @@ export default function Projects({ projects }: ProjectsProps) {
               className="group rounded-xl border overflow-hidden cursor-pointer"
               style={{
                 backgroundColor: mode === "dark" ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.6)",
-                borderColor: mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.05)",
+                borderColor: mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.05)";
+                e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)";
               }}
             >
-              <div className="relative h-36 sm:h-44 overflow-hidden bg-black">
+              <div className="relative h-32 sm:h-36 overflow-hidden bg-black">
                 <img
                   src={GRADIENT_IMAGES[index % 4]}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 />
-                <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4">
+                <div className="absolute inset-0 flex items-center justify-center p-3">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-[90%] sm:w-[85%] h-[85%] sm:h-[80%] object-cover rounded-lg shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
+                    className="w-[90%] h-[85%] object-cover rounded-lg shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
                 <div className="absolute top-2 right-1 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
@@ -91,7 +91,7 @@ export default function Projects({ projects }: ProjectsProps) {
                       onClick={(e) => e.stopPropagation()}
                       className="p-1.5 rounded-md backdrop-blur-md transition-colors bg-white/60 hover:bg-white/80 text-black cursor-pointer"
                     >
-                      <Github className="w-4.5 h-4.5" />
+                      <Github className="w-4 h-4" />
                     </a>
                   )}
                   {project.demo && (
@@ -107,26 +107,26 @@ export default function Projects({ projects }: ProjectsProps) {
                   )}
                 </div>
               </div>
-              <div className="p-3 sm:p-4">
-                <h3 className="font-semibold text-sm sm:text-base mb-1" style={{ color: colors.foreground }}>
+              <div className="p-3">
+                <h3 className="font-semibold text-sm mb-1" style={{ color: colors.foreground }}>
                   {project.title}
                 </h3>
-                <p className="text-xs sm:text-sm leading-relaxed line-clamp-2 mb-2 sm:mb-3" style={{ color: `${colors.foreground}99` }}>
+                <p className="text-xs leading-relaxed line-clamp-2 mb-2" style={{ color: `${colors.foreground}99` }}>
                   {project.description}
                 </p>
                 <div className="flex items-center justify-between gap-2">
                   <span
-                    className="inline-flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap"
+                    className="inline-flex items-center gap-1 text-xs font-medium transition-colors whitespace-nowrap"
                     style={{ color: colors.primary }}
                   >
                     View Project
-                    <MoveUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <MoveUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </span>
                   <div className="flex gap-1 flex-shrink-0">
                     {project.tags.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full font-medium"
+                        className="text-[9px] px-1.5 py-0.5 rounded-full font-medium"
                         style={{
                           backgroundColor: mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
                           color: `${colors.foreground}b3`,
@@ -142,6 +142,6 @@ export default function Projects({ projects }: ProjectsProps) {
           ))}
         </motion.div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 }

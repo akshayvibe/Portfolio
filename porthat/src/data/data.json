@@ -78,7 +78,37 @@
       "color": "#DC2626"
     }
   ],
-   "education": [
+  "status": {
+    "available": true,
+    "label": "Open to Work",
+    "currentFocus": "Building distributed systems with Go"
+  },
+  "experience": [
+    {
+      "company": "Google Developer Group",
+      "role": "Tech Lead",
+      "type": "Leadership",
+      "period": "2024 - Present",
+      "location": "VIT Bhopal",
+      "details": [
+        "Leading technical workshops and hackathons",
+        "Mentoring 50+ developers in the community",
+        "Organizing Google-sponsored tech events"
+      ]
+    },
+    {
+      "company": "VITERA Club",
+      "role": "Core Member",
+      "type": "Community",
+      "period": "2023 - Present",
+      "location": "VIT Bhopal",
+      "details": [
+        "Contributing to open-source projects",
+        "Coordinating inter-college tech fests"
+      ]
+    }
+  ],
+  "education": [
     {
       "institution": "Vellore Institute Of Technology",
       "degree": "Bachelors Of Technology",
@@ -91,6 +121,28 @@
         "Core Member of VITERA Club",
         "Champion of the school chess club"
       ]
+    }
+  ],
+  "funFacts": [
+    {
+      "label": "Cups of Coffee",
+      "value": "2000+",
+      "icon": "coffee"
+    },
+    {
+      "label": "Chess Games",
+      "value": "500+",
+      "icon": "trophy"
+    },
+    {
+      "label": "Projects Built",
+      "value": "15+",
+      "icon": "code"
+    },
+    {
+      "label": "Contributions",
+      "value": "800+",
+      "icon": "gitCommit"
     }
   ],
   "projects": [

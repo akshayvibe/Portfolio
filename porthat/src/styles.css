@@ -63,3 +63,80 @@ body {
 ::view-transition-new(root) {
   z-index: 9999;
 }
+
+/* ─── Bento Grid Layout ─── */
+
+.bento-container {
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .bento-container {
+    padding: 20px;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 100%;
+    min-height: calc(100vh - 40px);
+  }
+
+  /* Row 1: Hero (3 cols) + Status (1 col) */
+  .bento-hero        { grid-column: span 3; }
+  .bento-status       { grid-column: span 1; }
+
+  /* Row 2: Skills (3 cols) + Spotify (1 col) */
+  .bento-skills       { grid-column: span 3; }
+  .bento-spotify      { grid-column: span 1; }
+
+  /* Row 3: GitHub (full width) */
+  .bento-github       { grid-column: span 4; }
+
+  /* Row 4: Education (3 cols) + Experience (1 col) */
+  .bento-education    { grid-column: span 3; }
+  .bento-experience   { grid-column: span 1; }
+
+  /* Row 5: Projects (full width) */
+  .bento-projects     { grid-column: span 4; }
+
+  /* Row 6: Footer (full width) */
+  .bento-footer       { grid-column: span 4; }
+}
+
+/* Shared bento card style */
+.bento-card {
+  border-radius: 20px;
+  border: 1px solid;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .bento-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Status pulse */
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+
+.status-dot {
+  animation: status-pulse 2s ease-in-out infinite;
+}

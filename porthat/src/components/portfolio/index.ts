@@ -1,5 +1,5 @@
 export { default as Hero } from "./Hero";
-// export { default as Experience } from "./";
+export { default as Experience } from "./Experience";
 export { default as Education } from "./Education";
 export { default as Projects } from "./Projects";
 export { default as Skills } from "./Skills";
@@ -10,3 +10,7 @@ export { default as Icon } from "./Icon";
 export { default as GitHubChart } from "./GitHubChart";
 export { default as SpotifyWidget } from "./SpotifyWidget";
 export { default as IllustrationOverlay } from "./IllustrationOverlay";
+export { default as StatusCard } from "./StatusCard";
+export { default as ChessCard } from "./ChessCard";
+export { default as FunFacts } from "./FunFacts";
+export { default as FeaturedProject } from "./FeaturedProject";

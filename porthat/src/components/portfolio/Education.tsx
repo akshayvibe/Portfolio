@@ -1,12 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown, ChevronUp, GraduationCap } from "lucide-react";
+import { ChevronDown, GraduationCap } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 import { ANIMATION } from "../../lib/constants";
 import { getSectionGradient, getGlowColor } from "../../lib/themes";
 import type { Education as EducationType } from "../../types/portfolio";
-
-const INITIAL_SHOW_COUNT = 4;
 
 interface EducationProps {
   education: EducationType[];
@@ -15,18 +13,14 @@ interface EducationProps {
 export default function Education({ education }: EducationProps) {
   const { colors, mode } = useTheme();
   const [expandedEdu, setExpandedEdu] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
-
-  const displayedEducation = showAll ? education : education.slice(0, INITIAL_SHOW_COUNT);
-  const hasMore = education.length > INITIAL_SHOW_COUNT;
 
   return (
-    <motion.section
+    <motion.div
       variants={ANIMATION.fadeIn}
-      className="mb-5 sm:mb-6 relative overflow-hidden rounded-2xl p-4 sm:p-6 backdrop-blur-xl border"
+      className="bento-card bento-education p-5 h-full relative overflow-hidden"
       style={{
         background: getSectionGradient(colors, mode),
-        borderColor: mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
+        borderColor: mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)",
       }}
     >
       <div
@@ -34,35 +28,35 @@ export default function Education({ education }: EducationProps) {
         style={{ background: getGlowColor(colors, mode) }}
       />
       <div className="relative z-10">
-        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+        <div className="flex items-center gap-2 mb-4">
           <div
-            className="h-6 sm:h-8 w-1 rounded-full"
+            className="h-6 w-1 rounded-full"
             style={{ background: `linear-gradient(to bottom, ${colors.highlight}, ${colors.accent})` }}
           />
-          <h2 className="text-base sm:text-lg font-semibold" style={{ color: colors.foreground }}>
+          <h3 className="text-sm font-semibold" style={{ color: colors.foreground }}>
             Education
-          </h2>
+          </h3>
         </div>
 
-        <div className="space-y-3">
-          {displayedEducation.map((edu, index) => (
+        <div className="space-y-2.5">
+          {education.map((edu, index) => (
             <motion.div
               key={index}
               className="rounded-xl border overflow-hidden transition-all backdrop-blur-md"
               style={{
                 backgroundColor: mode === "dark" ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.5)",
-                borderColor: mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.05)",
+                borderColor: mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = `${colors.highlight}50`;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.05)";
+                e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)";
               }}
             >
               <button
                 onClick={() => setExpandedEdu(expandedEdu === index ? null : index)}
-                className="w-full p-3 sm:p-4 text-left transition-colors cursor-pointer"
+                className="w-full p-3 text-left transition-colors cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.2)";
@@ -73,35 +67,28 @@ export default function Education({ education }: EducationProps) {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap mb-1 sm:mb-0">
-                      <GraduationCap className="w-4 h-4" style={{ color: colors.highlight }} />
-                      <span className="font-medium text-sm sm:text-base" style={{ color: colors.foreground }}>
+                    <div className="flex items-center gap-2 flex-wrap mb-0.5">
+                      <GraduationCap className="w-3.5 h-3.5" style={{ color: colors.highlight }} />
+                      <span className="font-medium text-sm" style={{ color: colors.foreground }}>
                         {edu.institution}
                       </span>
                     </div>
-                    <p className="text-sm" style={{ color: `${colors.foreground}b3` }}>
+                    <p className="text-xs" style={{ color: `${colors.foreground}b3` }}>
                       {edu.degree} in {edu.field}
                     </p>
                     {edu.grade && (
-                      <p className="text-xs mt-1" style={{ color: `${colors.foreground}80` }}>
+                      <p className="text-[11px] mt-0.5" style={{ color: `${colors.foreground}80` }}>
                         Grade: {edu.grade}
                       </p>
                     )}
-                    <div className="flex items-center gap-2 text-xs sm:hidden mt-1" style={{ color: `${colors.foreground}99` }}>
-                      <span>{edu.period}</span>
-                      <span>•</span>
-                      <span>{edu.location}</span>
-                    </div>
                   </div>
-                  <div className="hidden sm:flex items-start gap-3">
-                    <div className="text-right">
-                      <p className="text-sm" style={{ color: `${colors.foreground}cc` }}>{edu.period}</p>
-                      <p className="text-xs" style={{ color: `${colors.foreground}80` }}>{edu.location}</p>
-                    </div>
+                  <div className="hidden sm:block text-right flex-shrink-0">
+                    <p className="text-xs" style={{ color: `${colors.foreground}cc` }}>{edu.period}</p>
+                    <p className="text-[11px]" style={{ color: `${colors.foreground}80` }}>{edu.location}</p>
                   </div>
                   {edu.details && edu.details.length > 0 && (
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${expandedEdu === index ? "rotate-180" : ""}`}
+                      className={`w-3.5 h-3.5 transition-transform duration-200 flex-shrink-0 ${expandedEdu === index ? "rotate-180" : ""}`}
                       style={{ color: `${colors.foreground}66` }}
                     />
                   )}
@@ -119,13 +106,13 @@ export default function Education({ education }: EducationProps) {
                       className="overflow-hidden"
                     >
                       <div
-                        className="px-3 sm:px-4 pb-3 sm:pb-4 pt-0 border-t"
+                        className="px-3 pb-3 pt-0 border-t"
                         style={{ borderColor: mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)" }}
                       >
-                        <ul className="space-y-1.5 sm:space-y-2 pt-2.5 sm:pt-3">
+                        <ul className="space-y-1.5 pt-2.5">
                           {edu.details.map((detail, i) => (
-                            <li key={i} className="flex items-start gap-1.5 sm:gap-2 text-xs sm:text-sm" style={{ color: `${colors.foreground}b3` }}>
-                              <span style={{ color: colors.highlight }} className="mt-1 sm:mt-1.5">•</span>
+                            <li key={i} className="flex items-start gap-1.5 text-xs" style={{ color: `${colors.foreground}b3` }}>
+                              <span style={{ color: colors.highlight }} className="mt-1">•</span>
                               {detail}
                             </li>
                           ))}
@@ -138,35 +125,7 @@ export default function Education({ education }: EducationProps) {
             </motion.div>
           ))}
         </div>
-
-        {hasMore && (
-          <div className="flex justify-center mt-4">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 border cursor-pointer"
-              style={{
-                background: mode === "dark" ? `${colors.highlight}15` : `${colors.highlight}10`,
-                borderColor: mode === "dark" ? `${colors.highlight}30` : `${colors.highlight}20`,
-                color: mode === "dark" ? colors.highlight : colors.primary,
-              }}
-            >
-              {showAll ? (
-                <>
-                  Show less
-                  <ChevronUp className="w-3.5 h-3.5" />
-                </>
-              ) : (
-                <>
-                  Show {education.length - INITIAL_SHOW_COUNT} more
-                  <ChevronDown className="w-3.5 h-3.5" />
-                </>
-              )}
-            </motion.button>
-          </div>
-        )}
       </div>
-    </motion.section>
+    </motion.div>
   );
 }
