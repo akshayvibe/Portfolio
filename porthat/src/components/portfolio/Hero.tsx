@@ -27,7 +27,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
   return (
     <motion.div variants={ANIMATION.fadeIn} className="bento-card bento-hero overflow-hidden flex flex-col">
       {/* Banner */}
-      <div className="relative h-28 sm:h-32 lg:h-36 flex-shrink-0">
+      <div className="relative h-28 sm:h-32 lg:h-46 flex-shrink-0">
         <img src={profile.banner} alt="Banner" className="w-full h-full object-cover" />
         <button
           onClick={(e) => setMode(mode === "dark" ? "light" : "dark", e)}
@@ -43,7 +43,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
         <div className="absolute -bottom-10 left-5 z-20">
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl overflow-hidden border-4 shadow-xl"
+            className="w-30 h-30 sm:w-30 sm:h-30 rounded-2xl overflow-hidden border-4 shadow-xl"
             style={{ borderColor: colors.background, backgroundColor: colors.background }}
           >
             <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover" />
@@ -72,7 +72,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="ml-auto flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer"
+              className="ml-auto flex items-center gap-1.5 px-3 py-1 rounded-lg text-s font-medium transition-all duration-200 cursor-pointer border-1 border-blue-500"
               style={{
                 backgroundColor: mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
                 color: `${colors.foreground}b3`,
@@ -84,7 +84,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
                 e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)";
               }}
             >
-              <Download className="w-3 h-3" />
+              <Download className="w-3 h-3 " />
               Resume
             </motion.a>
           </div>
