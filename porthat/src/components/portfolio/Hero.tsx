@@ -149,32 +149,35 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
             Find me on the <span style={{ color: colors.foreground }} className="font-medium">internet</span>
           </p>
           <div className="flex flex-wrap gap-1.5">
-            {socials.map((social) => (
-              <motion.a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs transition-all duration-200 cursor-pointer"
-                style={{
-                  backgroundColor: mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
-                  color: `${colors.foreground}b3`,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
-                  e.currentTarget.style.color = colors.foreground;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)";
-                  e.currentTarget.style.color = `${colors.foreground}b3`;
-                }}
-              >
-                <Icon name={social.icon} className="w-3.5 h-3.5" />
-                {social.name}
-              </motion.a>
-            ))}
+            {socials.map((social) => {
+              const brandColor = social.color || colors.primary;
+              return (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs transition-all duration-200 cursor-pointer"
+                  style={{
+                    backgroundColor: mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
+                    color: `${colors.foreground}b3`,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
+                    e.currentTarget.style.color = colors.foreground;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)";
+                    e.currentTarget.style.color = `${colors.foreground}b3`;
+                  }}
+                >
+                  <Icon name={social.icon} className="w-3.5 h-3.5" style={{ color: brandColor }} />
+                  {social.name}
+                </motion.a>
+              );
+            })}
           </div>
         </div>
       </div>

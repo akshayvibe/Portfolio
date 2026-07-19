@@ -23,59 +23,73 @@
     {
       "name": "GitHub",
       "url": "https://github.com/akshayvibe",
-      "icon": "github"
+      "icon": "github",
+      "color": "#6e40c9"
     },
     {
       "name": "Twitter",
       "url": "https://x.com/akshajha2111",
-      "icon": "twitter"
+      "icon": "twitter",
+      "color": "#1DA1F2"
     },
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/akshay-kumar-mishra-320413246/",
-      "icon": "linkedin"
+      "icon": "linkedin",
+      "color": "#0A66C2"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/u/akshayjha2111/",
+      "icon": "code",
+      "color": "#FFA116"
     }
   ],
   "skills": [
     {
-      "name": "Strategic Planning",
+      "name": "Go (Golang)",
+      "icon": "code",
+      "color": "#00ADD8"
+    },
+    {
+      "name": "React",
+      "icon": "layers",
+      "color": "#61DAFB"
+    },
+    {
+      "name": "Node.js & Express",
+      "icon": "server",
+      "color": "#68A063"
+    },
+    {
+      "name": "AWS Cloud",
+      "icon": "cloud",
+      "color": "#FF9900"
+    },
+    {
+      "name": "Docker",
+      "icon": "package",
+      "color": "#2496ED"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "database",
+      "color": "#336791"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "database",
+      "color": "#47A248"
+    },
+    {
+      "name": "AI & Python",
       "icon": "brain",
       "color": "#8B5CF6"
     },
     {
-      "name": "Tactical Analysis",
-      "icon": "target",
-      "color": "#EF4444"
-    },
-    {
-      "name": "Leadership",
-      "icon": "crown",
-      "color": "#F59E0B"
-    },
-    {
-      "name": "Chess",
-      "icon": "trophy",
-      "color": "#10B981"
-    },
-    {
-      "name": "Knightmare Piloting",
-      "icon": "gamepad",
-      "color": "#3B82F6"
-    },
-    {
-      "name": "Manipulation",
-      "icon": "message",
-      "color": "#EC4899"
-    },
-    {
-      "name": "Public Speaking",
-      "icon": "mic",
-      "color": "#06B6D4"
-    },
-    {
-      "name": "Geass Control",
-      "icon": "eye",
-      "color": "#DC2626"
+      "name": "Go Fiber",
+      "icon": "zap",
+      "color": "#00C7D4"
     }
   ],
   "status": {
@@ -165,7 +179,7 @@
       "id": "2",
       "title": "SafeSphere.AI",
       "slug": "SafeSphere.AI",
-      "description": "Our project designed to empower women online by providing real-time privacy protection, harassment detection, and stalking defense across popular platforms like Gmail, Twitter, Instagram, and Facebook.",
+      "description": "It is designed to empower women online by providing real-time privacy protection, harassment detection, and stalking defense across popular platforms like Gmail, Twitter, Instagram, and Facebook.",
       "image": "https://wallpapercave.com/wp/wp2883518.jpg",
       "tags": [
         "CyberSecurity",
@@ -178,16 +192,17 @@
     },
     {
       "id": "3",
-      "title": "Distributed Worker Queue",
-      "slug": "SafeSphere.AI",
-      "description": "Diplomatic achievement uniting 47 nations against the Britannian Empire, establishing a democratic world order.",
-      "image": "https://wallpapercave.com/wp/yO2TljR.jpg",
+      "title": "Synapse",
+      "slug": "Synapse",
+      "description": "AI-powered CLI personal assistant designed to unify LLM reasoning, persistent memory, RAG, and MCP tool integrations into one experience.",
+      "image": "https://wallpapercave.com/wp/wp2883490.jpg",
       "tags": [
-        "Diplomacy",
-        "Politics",
-        "Unity"
+        "AI",
+        "CLI",
+        "MCP",
+        "RAG"
       ],
-      "github": null,
+      "github": "https://github.com/akshayvibe/synapse",
       "demo": null,
       "featured": true
     },
