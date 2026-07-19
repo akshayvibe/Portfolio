@@ -60,7 +60,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
       >
         <div className="mb-3">
           <div className="flex items-center gap-2 flex-wrap">
-            <h1 className="text-lg sm:text-xl font-semibold" style={{ color: colors.foreground }}>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold" style={{ color: colors.foreground }}>
               {profile.name}
             </h1>
             <span className="text-xs" style={{ color: `${colors.foreground}80` }}>
@@ -96,7 +96,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-sm"
+                className="text-sm sm:text-base"
                 style={{ color: `${colors.foreground}99` }}
               >
                 {roles[roleIndex]}
@@ -105,7 +105,7 @@ export default function Hero({ profile, roles, socials }: HeroProps) {
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm leading-relaxed mb-4" style={{ color: `${colors.foreground}b3` }}>
+        <p className="text-sm sm:text-base leading-relaxed mb-4" style={{ color: `${colors.foreground}b3` }}>
           {profile.bio}
         </p>
 

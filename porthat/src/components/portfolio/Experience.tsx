@@ -23,7 +23,7 @@ export default function Experience({ experiences }: ExperienceProps) {
         borderColor: mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)",
       }}
     >
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-3 flex-shrink-0">
         <div
           className="h-6 w-1 rounded-full"
           style={{ background: `linear-gradient(to bottom, ${colors.accent}, ${colors.secondary})` }}
@@ -33,7 +33,7 @@ export default function Experience({ experiences }: ExperienceProps) {
         </h3>
       </div>
 
-      <div className="space-y-2.5 flex-1">
+      <div className="space-y-2 flex-1 overflow-y-auto pr-0.5" style={{ scrollbarWidth: "none" }}>
         {experiences.map((exp, index) => (
           <div
             key={index}
@@ -45,7 +45,7 @@ export default function Experience({ experiences }: ExperienceProps) {
           >
             <button
               onClick={() => setExpandedExp(expandedExp === index ? null : index)}
-              className="w-full p-3 text-left cursor-pointer transition-colors"
+              className="w-full p-2.5 text-left cursor-pointer transition-colors"
               style={{ backgroundColor: "transparent" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = mode === "dark" ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.3)";
@@ -58,7 +58,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <Briefcase className="w-3 h-3 flex-shrink-0" style={{ color: colors.accent }} />
-                    <span className="font-medium text-xs" style={{ color: colors.foreground }}>
+                    <span className="font-medium text-xs leading-tight" style={{ color: colors.foreground }}>
                       {exp.company}
                     </span>
                   </div>
@@ -67,7 +67,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                 </div>
                 {exp.details && exp.details.length > 0 && (
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 flex-shrink-0 ${expandedExp === index ? "rotate-180" : ""}`}
+                    className={`w-3.5 h-3.5 transition-transform duration-200 flex-shrink-0 mt-0.5 ${expandedExp === index ? "rotate-180" : ""}`}
                     style={{ color: `${colors.foreground}66` }}
                   />
                 )}
@@ -105,3 +105,4 @@ export default function Experience({ experiences }: ExperienceProps) {
     </motion.div>
   );
 }
+

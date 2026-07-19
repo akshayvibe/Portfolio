@@ -11,7 +11,6 @@ import {
   SpotifyWidget,
   IllustrationOverlay,
   Experience,
-  StatusCard,
 } from "./index";
 import type { PortfolioData } from "../../types/portfolio";
 
@@ -39,11 +38,11 @@ function PortfolioContent({ data }: PortfolioProps) {
       >
         {/* Bento Grid */}
         <div className="bento-grid">
-          {/* Row 1: Hero + Status */}
+          {/* Row 1: Hero (3 cols) + Experience (1 col) */}
           <Hero profile={data.profile} roles={data.roles} socials={data.socials} />
-          <StatusCard status={data.status} location={data.profile.location} />
+          <Experience experiences={data.experience} />
 
-          {/* Row 2: Skills + Spotify */}
+          {/* Row 2: Skills (3 cols) + Spotify (1 col) */}
           <motion.div
             variants={ANIMATION.fadeIn}
             className="bento-card bento-skills p-5"
@@ -61,17 +60,14 @@ function PortfolioContent({ data }: PortfolioProps) {
           </motion.div>
           <SpotifyWidget />
 
-          {/* Row 3: GitHub (full width) */}
+          {/* Row 3: GitHub Contributions (2 cols) + Education (2 cols) */}
           <GitHubChart username={data.github} />
-
-          {/* Row 4: Education + Experience */}
           <Education education={data.education} />
-          <Experience experiences={data.experience} />
 
-          {/* Row 5: Projects (full width) */}
+          {/* Row 4: Projects (full width) */}
           <Projects projects={data.projects} />
 
-          {/* Row 6: Footer */}
+          {/* Row 5: Footer */}
           <div className="bento-footer">
             <Footer quotes={data.quotes} handle={data.profile.handle} />
           </div>

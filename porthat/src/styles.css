@@ -80,6 +80,23 @@ body {
   margin: 0 auto;
 }
 
+/* Tablet: 2-column grid */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .bento-hero      { grid-column: span 2; }
+  .bento-experience { grid-column: span 2; }
+  .bento-skills    { grid-column: span 2; }
+  .bento-spotify   { grid-column: span 2; }
+  .bento-github    { grid-column: span 2; }
+  .bento-education { grid-column: span 2; }
+  .bento-projects  { grid-column: span 2; }
+  .bento-footer    { grid-column: span 2; }
+}
+
 @media (min-width: 1024px) {
   .bento-container {
     padding: 20px;
@@ -90,28 +107,27 @@ body {
     gap: 18px;
     max-width: 100%;
     min-height: calc(100vh - 40px);
+    /* ensure cells in same row stretch to equal height */
+    align-items: stretch;
   }
 
-  /* Row 1: Hero (3 cols) + Status (1 col) */
+  /* Row 1: Hero (3 cols) + Experience (1 col) */
   .bento-hero        { grid-column: span 3; }
-  .bento-status       { grid-column: span 1; }
+  .bento-experience  { grid-column: span 1; }
 
   /* Row 2: Skills (3 cols) + Spotify (1 col) */
-  .bento-skills       { grid-column: span 3; }
-  .bento-spotify      { grid-column: span 1; }
+  .bento-skills      { grid-column: span 3; }
+  .bento-spotify     { grid-column: span 1; }
 
-  /* Row 3: GitHub (full width) */
-  .bento-github       { grid-column: span 4; }
+  /* Row 3: GitHub Contributions (2 cols) + Education (2 cols) */
+  .bento-github      { grid-column: span 2; }
+  .bento-education   { grid-column: span 2; }
 
-  /* Row 4: Education (3 cols) + Experience (1 col) */
-  .bento-education    { grid-column: span 3; }
-  .bento-experience   { grid-column: span 1; }
+  /* Row 4: Projects (full width) */
+  .bento-projects    { grid-column: span 4; }
 
-  /* Row 5: Projects (full width) */
-  .bento-projects     { grid-column: span 4; }
-
-  /* Row 6: Footer (full width) */
-  .bento-footer       { grid-column: span 4; }
+  /* Row 5: Footer (full width) */
+  .bento-footer      { grid-column: span 4; }
 }
 
 /* Shared bento card style */

@@ -33,7 +33,7 @@ export default function Education({ education }: EducationProps) {
             className="h-6 w-1 rounded-full"
             style={{ background: `linear-gradient(to bottom, ${colors.highlight}, ${colors.accent})` }}
           />
-          <h3 className="text-sm font-semibold" style={{ color: colors.foreground }}>
+          <h3 className="text-sm sm:text-base lg:text-lg font-semibold" style={{ color: colors.foreground }}>
             Education
           </h3>
         </div>
@@ -69,22 +69,22 @@ export default function Education({ education }: EducationProps) {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-0.5">
                       <GraduationCap className="w-3.5 h-3.5" style={{ color: colors.highlight }} />
-                      <span className="font-medium text-sm" style={{ color: colors.foreground }}>
+                      <span className="font-medium text-sm sm:text-base" style={{ color: colors.foreground }}>
                         {edu.institution}
                       </span>
                     </div>
-                    <p className="text-xs" style={{ color: `${colors.foreground}b3` }}>
+                    <p className="text-xs sm:text-sm" style={{ color: `${colors.foreground}b3` }}>
                       {edu.degree} in {edu.field}
                     </p>
                     {edu.grade && (
-                      <p className="text-[11px] mt-0.5" style={{ color: `${colors.foreground}80` }}>
+                      <p className="text-xs sm:text-sm mt-0.5" style={{ color: `${colors.foreground}80` }}>
                         Grade: {edu.grade}
                       </p>
                     )}
                   </div>
                   <div className="hidden sm:block text-right flex-shrink-0">
-                    <p className="text-xs" style={{ color: `${colors.foreground}cc` }}>{edu.period}</p>
-                    <p className="text-[11px]" style={{ color: `${colors.foreground}80` }}>{edu.location}</p>
+                    <p className="text-xs sm:text-sm" style={{ color: `${colors.foreground}cc` }}>{edu.period}</p>
+                    <p className="text-xs sm:text-sm" style={{ color: `${colors.foreground}80` }}>{edu.location}</p>
                   </div>
                   {edu.details && edu.details.length > 0 && (
                     <ChevronDown
@@ -111,7 +111,7 @@ export default function Education({ education }: EducationProps) {
                       >
                         <ul className="space-y-1.5 pt-2.5">
                           {edu.details.map((detail, i) => (
-                            <li key={i} className="flex items-start gap-1.5 text-xs" style={{ color: `${colors.foreground}b3` }}>
+                            <li key={i} className="flex items-start gap-1.5 text-xs sm:text-sm" style={{ color: `${colors.foreground}b3` }}>
                               <span style={{ color: colors.highlight }} className="mt-1">•</span>
                               {detail}
                             </li>

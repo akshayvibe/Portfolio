@@ -69,7 +69,7 @@ export default function Projects({ projects }: ProjectsProps) {
                 e.currentTarget.style.borderColor = mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)";
               }}
             >
-              <div className="relative h-32 sm:h-36 overflow-hidden bg-black">
+              <div className="relative h-44 sm:h-52 overflow-hidden bg-black">
                 <img
                   src={GRADIENT_IMAGES[index % 4]}
                   alt=""
@@ -108,10 +108,10 @@ export default function Projects({ projects }: ProjectsProps) {
                 </div>
               </div>
               <div className="p-3">
-                <h3 className="font-semibold text-sm mb-1" style={{ color: colors.foreground }}>
+                <h3 className="font-semibold text-sm sm:text-base mb-1" style={{ color: colors.foreground }}>
                   {project.title}
                 </h3>
-                <p className="text-xs leading-relaxed line-clamp-2 mb-2" style={{ color: `${colors.foreground}99` }}>
+                <p className="text-xs sm:text-sm leading-relaxed line-clamp-2 mb-2" style={{ color: `${colors.foreground}99` }}>
                   {project.description}
                 </p>
                 <div className="flex items-center justify-between gap-2">
